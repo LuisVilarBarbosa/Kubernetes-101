@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: database-service
+  labels:
+    app: database-service
+spec:
+  selector:
+    app: database
+  ports:
+    - port: 3306
+      protocol: TCP
+      name: mysqld
+    - port: 33060
+      protocol: TCP
+      name: x-plugin

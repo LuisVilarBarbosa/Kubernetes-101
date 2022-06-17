@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: database-pod
+  labels:
+    app: database
+spec:
+  containers:
+  - name: database
+    image: mysql:8.0.29
+    ports:
+    - containerPort: 3306
+    - containerPort: 33060
+    #readinessProbe:
+    #  initialDelaySeconds: 15
+    #  periodSeconds: 5
+    #  tcpSocket:
+    #    port: 3306
+    env:
+    - name: MYSQL_DATABASE
+      value: "wordpress_db"
+    - name: MYSQL_USER
+      value: "username"
+    - name: MYSQL_PASSWORD
+      value: "password"
+    - name: MYSQL_RANDOM_ROOT_PASSWORD
+      value: "1"
