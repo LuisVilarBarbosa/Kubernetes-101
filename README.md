@@ -14,9 +14,14 @@ minikube start
 To see which resources are running, run one of the following commands on the terminal:
 ```
 kubectl get pods
+kubectl get replicasets
 kubectl get deployments
 kubectl get services
+kubectl get all
 kubectl get ingresses
+kubectl get secrets
+kubectl get namespaces
+kubectl get endpoints
 ```
 
 ## Applying configuration files
@@ -57,3 +62,24 @@ To get the external IP of *minikube*, run the following command on the terminal:
 ```
 minikube ip
 ```
+
+## Exposing a service on *minikube*
+
+To expose a service on *minikube*, run the following command on the terminal:
+```
+minikube service <service>
+```
+
+## Tutorials
+
+[7 Tips and Tricks to Enjoying Your Kubernetes Journey](https://www.youtube.com/watch?v=RRCzgVI4ptY)
+
+[Kubernetes The Easy Way!](https://www.youtube.com/watch?v=kOa_llowQ1c)
+
+[Independent Deployment of the Frontend with Docker and Kubernetes](https://www.youtube.com/watch?v=Td7w0_nD5_4)
+
+[Kubernetes for JavaScript Developers](https://www.youtube.com/watch?v=Zd85lFlm1pU)
+
+[Kubernetes YAML File Explained - Deployment and Service | Kubernetes Tutorial 19](https://www.youtube.com/watch?v=qmDzcu5uY1I)
+
+[**Kubernetes Tutorial for Beginners [FULL COURSE in 4 Hours]**](https://www.youtube.com/watch?v=X48VuDVv0do)
