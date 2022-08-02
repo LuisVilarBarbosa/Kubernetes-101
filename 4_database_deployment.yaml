@@ -5,6 +5,7 @@ metadata:
   labels:
     app: database
 spec:
+  replicas: 2
   selector:
     matchLabels:
       app: database
@@ -15,4 +16,22 @@ spec:
     spec:
       containers:
       - name: database
-        image: wordpress:php8.1-apache
+        image: mysql:8.0.29
+        ports:
+        - containerPort: 3306
+        - containerPort: 33060
+        env:
+        - name: MYSQL_DATABASE
+          value: "wordpress_db"
+        - name: MYSQL_USER
+          valueFrom:
+            secretKeyRef:
+              name: database-secret
+              key: database-username
+        - name: MYSQL_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: database-secret
+              key: database-password
+        - name: MYSQL_RANDOM_ROOT_PASSWORD
+          value: "1"

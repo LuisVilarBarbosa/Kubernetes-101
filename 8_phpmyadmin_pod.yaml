@@ -18,6 +18,12 @@ spec:
     - name: PMA_HOST
       value: "database-service"
     - name: PMA_USER
-      value: "username"
+      valueFrom:
+        secretKeyRef:
+          name: database-secret
+          key: database-username
     - name: PMA_PASSWORD
-      value: "password"
+      valueFrom:
+        secretKeyRef:
+          name: database-secret
+          key: database-password
