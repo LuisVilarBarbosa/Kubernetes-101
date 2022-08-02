@@ -22,7 +22,10 @@ spec:
         - containerPort: 33060
         env:
         - name: MYSQL_DATABASE
-          value: "wordpress_db"
+          valueFrom:
+            configMapKeyRef:
+              name: database-config-map
+              key: database-name
         - name: MYSQL_USER
           valueFrom:
             secretKeyRef:
