@@ -3,7 +3,7 @@ kind: Pod
 metadata:
   name: site-pod
   labels:
-    app: site
+    app: site-test
 spec:
   containers:
   - name: site
