@@ -70,6 +70,26 @@ To expose a service on *minikube*, run the following command on the terminal:
 minikube service <service>
 ```
 
+## Giving external IP address to LoadBalancer services on *minikube*
+
+To give an external IP address to LoadBalancer services on *minikube*, run the following command on the terminal:
+```
+minikube tunnel
+```
+
+## Using the Kubernetes Dashboard UI
+
+To use the Kubernetes Dashboard UI, refer to the following URLs:
+```
+https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/
+https://stackoverflow.com/questions/46664104/how-to-sign-in-kubernetes-dashboard
+```
+
+If you are using *minikube*, you can simply run the following command on the terminal:
+```
+minikube dashboard
+```
+
 ## Tutorials
 
 [7 Tips and Tricks to Enjoying Your Kubernetes Journey](https://www.youtube.com/watch?v=RRCzgVI4ptY)
