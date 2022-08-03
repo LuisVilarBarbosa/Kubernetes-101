@@ -43,11 +43,11 @@ While this program is running, it will be possible to access the pods on the fol
 http://localhost:8001/api/v1/namespaces/default/pods/<pod-name>:<pod-port>/proxy/
 ```
 For example:
-```
-http://localhost:8001/api/v1/namespaces/default/pods/readiness-pod:3000/proxy/
-http://localhost:8001/api/v1/namespaces/default/pods/site-pod:80/proxy/
-http://localhost:8001/api/v1/namespaces/default/pods/database-admin-pod:80/proxy/
-```
+
+[http://localhost:8001/api/v1/namespaces/default/pods/readiness-pod:3000/proxy/](http://localhost:8001/api/v1/namespaces/default/pods/readiness-pod:3000/proxy/)
+[http://localhost:8001/api/v1/namespaces/default/pods/site-pod:80/proxy/](http://localhost:8001/api/v1/namespaces/default/pods/site-pod:80/proxy/)
+[http://localhost:8001/api/v1/namespaces/default/pods/database-admin-pod:80/proxy/](http://localhost:8001/api/v1/namespaces/default/pods/database-admin-pod:80/proxy/)
+
 
 ## Enabling support for ingresses in *minikube*
 
@@ -80,10 +80,9 @@ minikube tunnel
 ## Using the Kubernetes Dashboard UI
 
 To use the Kubernetes Dashboard UI, refer to the following URLs:
-```
-https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/
-https://stackoverflow.com/questions/46664104/how-to-sign-in-kubernetes-dashboard
-```
+
+[https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/](https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/)
+[https://stackoverflow.com/questions/46664104/how-to-sign-in-kubernetes-dashboard](https://stackoverflow.com/questions/46664104/how-to-sign-in-kubernetes-dashboard)
 
 If you are using *minikube*, you can simply run the following command on the terminal:
 ```
