@@ -1,14 +1,15 @@
 apiVersion: apps/v1
-kind: Deployment
+kind: StatefulSet
 metadata:
-  name: database-deployment
+  name: database-stateful-set
   labels:
     app: database
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: database
+  serviceName: "database"
   template:
     metadata:
       labels:
@@ -38,3 +39,10 @@ spec:
               key: database-password
         - name: MYSQL_RANDOM_ROOT_PASSWORD
           value: "1"
+        volumeMounts:
+        - name: database-volume
+          mountPath: /var/lib/mysql
+      volumes:
+      - name: database-volume
+        persistentVolumeClaim:
+          claimName: database-persistent-volume-claim
