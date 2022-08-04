@@ -2,6 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: site-service
+  namespace: kubernetes-101-namespace
 spec:
   selector:
     app: site

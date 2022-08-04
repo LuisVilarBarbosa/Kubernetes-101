@@ -2,6 +2,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: database-pod
+  namespace: kubernetes-101-namespace
   labels:
     app: database-test
 spec:
