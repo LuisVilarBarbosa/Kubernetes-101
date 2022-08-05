@@ -8,6 +8,6 @@ spec:
     app: site
   type: LoadBalancer # Provides an externally-accessible IP address.
   ports:
-    - port: 80
+    - port: 8080
+      targetPort: 80
       protocol: TCP
-      nodePort: 30000

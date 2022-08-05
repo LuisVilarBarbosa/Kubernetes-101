@@ -17,7 +17,10 @@ spec:
         port: 80
     env:
     - name: PMA_HOST
-      value: "database-service"
+      valueFrom:
+        configMapKeyRef:
+          name: database-config-map
+          key: database-host
     - name: PMA_USER
       valueFrom:
         secretKeyRef:

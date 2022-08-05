@@ -4,4 +4,5 @@ metadata:
   name: database-config-map
   namespace: kubernetes-101-namespace
 data:
+  database-host: database-service
   database-name: wordpress_db
