@@ -1,6 +1,11 @@
 # Kubernetes 101
 
-This small project was created to improve my knowledge about Kubernetes by configuring a Kubernetes setup using minikube.
+This small project was created to improve my knowledge about Kubernetes by configuring a Kubernetes setup using *minikube*.
+
+The project is structured in the following manner:
+- The *docker-compose.yml* file contains the target configuration using just Docker.
+- The numbered files contain the Kubernetes configuration that mirrors the Docker target configuration and takes advantage of some of the additional features provided by Kubernetes. These files should be *applied* by numeric order.
+- This *README.md* file contains some documentation of commands and resources that I found helpful while studying and developing the Kubernetes configuration.
 
 ## Starting *minikube*
 
@@ -23,6 +28,8 @@ kubectl get secrets [-n kubernetes-101-namespace]
 kubectl get namespaces
 kubectl get endpoints [-n kubernetes-101-namespace]
 ```
+
+If you are using the *default* namespace, there is no need to indicate the portion of the command that is inside brackets, but, if you are trying to list resources that are part of another namespace, like the *kubernetes-101-namespace*, you need to indicate that portion of the command without the brackets.
 
 ## Applying configuration files
 
@@ -51,6 +58,8 @@ For example:
 
 ## Enabling support for ingresses in *minikube*
 
+An ingress exposes HTTP and HTTPS routes from outside the cluster to services within the cluster.
+
 To enable support for ingresses in *minikube*, run the following command on the terminal:
 ```
 minikube addons enable ingress
@@ -67,7 +76,7 @@ minikube ip
 
 To expose a service on *minikube*, run the following command on the terminal:
 ```
-minikube service <service> [-n kubernetes-101-namespace]
+minikube service <service> [-n <namespace>]
 ```
 
 ## Giving external IP address to LoadBalancer services on *minikube*
@@ -76,6 +85,8 @@ To give an external IP address to LoadBalancer services on *minikube*, run the f
 ```
 minikube tunnel
 ```
+
+If you have a service of type LoadBalancer that appears as *pending* to get an external IP and you are using *minikube*, you have to run this command to obtain an external IP.
 
 ## Using the Kubernetes Dashboard UI
 
