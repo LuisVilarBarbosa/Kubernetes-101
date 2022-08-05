@@ -13,15 +13,15 @@ minikube start
 
 To see which resources are running, run one of the following commands on the terminal:
 ```
-kubectl get pods
-kubectl get replicasets
-kubectl get deployments
-kubectl get services
-kubectl get all
-kubectl get ingresses
-kubectl get secrets
+kubectl get pods [-n kubernetes-101-namespace]
+kubectl get replicasets [-n kubernetes-101-namespace]
+kubectl get deployments [-n kubernetes-101-namespace]
+kubectl get services [-n kubernetes-101-namespace]
+kubectl get all [-n kubernetes-101-namespace]
+kubectl get ingresses [-n kubernetes-101-namespace]
+kubectl get secrets [-n kubernetes-101-namespace]
 kubectl get namespaces
-kubectl get endpoints
+kubectl get endpoints [-n kubernetes-101-namespace]
 ```
 
 ## Applying configuration files
@@ -40,13 +40,13 @@ kubectl proxy
 
 While this program is running, it will be possible to access the pods on the following URL:
 ```
-http://localhost:8001/api/v1/namespaces/default/pods/<pod-name>:<pod-port>/proxy/
+http://localhost:8001/api/v1/namespaces/<namespace>/pods/<pod-name>:<pod-port>/proxy/
 ```
 For example:
 
-[http://localhost:8001/api/v1/namespaces/default/pods/readiness-pod:3000/proxy/](http://localhost:8001/api/v1/namespaces/default/pods/readiness-pod:3000/proxy/)
-[http://localhost:8001/api/v1/namespaces/default/pods/site-pod:80/proxy/](http://localhost:8001/api/v1/namespaces/default/pods/site-pod:80/proxy/)
-[http://localhost:8001/api/v1/namespaces/default/pods/database-admin-pod:80/proxy/](http://localhost:8001/api/v1/namespaces/default/pods/database-admin-pod:80/proxy/)
+[http://localhost:8001/api/v1/namespaces/kubernetes-101-namespace/pods/readiness-pod:3000/proxy/](http://localhost:8001/api/v1/namespaces/kubernetes-101-namespace/pods/readiness-pod:3000/proxy/)
+[http://localhost:8001/api/v1/namespaces/kubernetes-101-namespace/pods/site-pod:80/proxy/](http://localhost:8001/api/v1/namespaces/kubernetes-101-namespace/pods/site-pod:80/proxy/)
+[http://localhost:8001/api/v1/namespaces/kubernetes-101-namespace/pods/database-admin-pod:80/proxy/](http://localhost:8001/api/v1/namespaces/kubernetes-101-namespace/pods/database-admin-pod:80/proxy/)
 
 
 ## Enabling support for ingresses in *minikube*
@@ -67,7 +67,7 @@ minikube ip
 
 To expose a service on *minikube*, run the following command on the terminal:
 ```
-minikube service <service>
+minikube service <service> [-n kubernetes-101-namespace]
 ```
 
 ## Giving external IP address to LoadBalancer services on *minikube*
